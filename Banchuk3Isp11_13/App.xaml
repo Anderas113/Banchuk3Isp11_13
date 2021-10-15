@@ -1,0 +1,9 @@
+﻿<Application x:Class="Banchuk3Isp11_13.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Banchuk3Isp11_13"
+             StartupUri="Windows/AuthWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
