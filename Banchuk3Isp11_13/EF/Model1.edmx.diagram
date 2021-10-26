@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1640177308cc4701bf710dada4a5711d" Name="Diagram1">
+        <EntityTypeShape EntityType="VeterenarModel.Administrator" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterenarModel.Breed" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterenarModel.Cabinet" Width="1.5" PointX="6" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterenarModel.ChiefMedicalOfficer" Width="1.5" PointX="6" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterenarModel.Client" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterenarModel.Doctor" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterenarModel.Gender" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterenarModel.KindOfAnimal" Width="1.5" PointX="3" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterenarModel.MedCart" Width="1.5" PointX="7.5" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterenarModel.Order" Width="1.5" PointX="8.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterenarModel.Patient" Width="1.5" PointX="5.25" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterenarModel.Schedule" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterenarModel.Service" Width="1.5" PointX="6" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterenarModel.Specality" Width="1.5" PointX="3.75" PointY="4.25" IsExpanded="true" />
+        <AssociationConnector Association="VeterenarModel.FK__Administr__Gende__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterenarModel.FK__Patient__IdBreed__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterenarModel.FK_Schedule_Cabinet" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterenarModel.FK__ChiefMedi__Gende__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterenarModel.FK__ChiefMedi__IdSpe__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterenarModel.FK__Client__GenderId__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterenarModel.FK__Patient__IdClien__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterenarModel.FK__Doctor__GenderId__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterenarModel.FK__Doctor__IdSpecal__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterenarModel.FK__Order__IdDoctor__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterenarModel.FK_Schedule_Doctor" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterenarModel.FK__Patient__GenderI__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterenarModel.FK__Patient__IdKind__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterenarModel.FK__MedCart__IdPatie__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterenarModel.FK__MedCart__OrderId__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterenarModel.FK__Order__IdPatient__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterenarModel.FK__Order__IdService__440B1D61" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

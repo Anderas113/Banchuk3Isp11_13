@@ -18,22 +18,18 @@
                     VerticalAlignment="Center">
             <Button x:Name="btnListProduct"
                     Content="Список клиентов"
-                    Click="btnListProduct_Click"
                    Background="Khaki"
                     />
             <Button x:Name="btnListUser"
                     Content="Список совещаний"
-                     Click="btnListUser_Click"
                     Background="Khaki"
                     />
             <Button x:Name="btnListExitProfile"
                     Content="Выйти из профиля"
-                    Click="btnListExitProfile_Click"
                    Background="Khaki"
                     />
             <Button x:Name="btnListCloseApp"
                     Content="Закрыть Приложение"
-                    Click="btnListCloseApp_Click"
                    Background="Khaki"
                     />
         </StackPanel>

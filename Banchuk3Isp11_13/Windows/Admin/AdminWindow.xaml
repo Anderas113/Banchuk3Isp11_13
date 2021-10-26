@@ -16,29 +16,28 @@
                     Orientation="Vertical"
                     Background="Khaki"
                     VerticalAlignment="Center">
+            <Button x:Name="btnListAdmin"
+                    Content="Список сотрудников менеджеров"
+                   Background="Khaki"
+                    />
             <Button x:Name="btnListProduct"
-                    Content="Список сотрудников"
-                    Click="btnListProduct_Click"
+                    Content="Список сотрудников ветиринаров"
                    Background="Khaki"
                     />
             <Button x:Name="btnListService"
                     Content="Список услуг"
-                    Click="btnListProduct_Click"
                    Background="Khaki"
                     />
             <Button x:Name="btnListUser"
                     Content="Список совещаний"
-                     Click="btnListUser_Click"
                     Background="Khaki"
                     />
             <Button x:Name="btnListExitProfile"
                     Content="Выйти из профиля"
-                    Click="btnListExitProfile_Click"
                    Background="Khaki"
                     />
             <Button x:Name="btnListCloseApp"
                     Content="Закрыть Приложение"
-                    Click="btnListCloseApp_Click"
                    Background="Khaki"
                     />
         </StackPanel>

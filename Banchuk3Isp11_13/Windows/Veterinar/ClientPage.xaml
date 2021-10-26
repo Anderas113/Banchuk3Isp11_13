@@ -20,11 +20,8 @@
                    VerticalAlignment="Center"
                    >
             <Button x:Name="btnBackFrm"
-                    Content="&lt;"
-                
-                    Click="btnBackFrm_Click"/>
+                    Content="&lt;"/>
             <TextBox x:Name="txbSearch"
-                     TextChanged="txbSearch_TextChanged"
                      />
 
 
@@ -36,7 +33,7 @@
             <Button x:Name="btnLastPage"
                     Content="&lt;"
                    
-                    Click="btnLastPage_Click"
+                 
                     />
             <TextBlock x:Name="tbckPage"
                        Text="1"
@@ -45,77 +42,31 @@
             <Button x:Name="btnNextPage"
                     Content=">"
                  
-                    Click="btnNextPage_Click"
+                  
                     />
         </StackPanel>
         <StackPanel Grid.Row="3"
                     Orientation="Horizontal"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-            <Button x:Name="btnEditUser"
-                    Content="Редактировать пациента"
-                 
-                    Click="btnEditProduct_Click"
+            <Button x:Name="btnEditManager"
+                    Content="Редактировать услугу"
                     />
-            <Button x:Name="btnDelUser"
-                    Content="Удалить пациента"
-                 
-                    Click="btnEditProduct_Click"
+            <Button x:Name="btnDelManager"
+                    Content="Удалить услугу"
                     />
-            <Button x:Name="btnAddUser"
-                    Content="Добавить пациента"
-                    
-                    Click="btnAddProduct_Click"/>
+            <Button x:Name="btnAddManager"
+                    Content="Добавить услугу"
+                   />
         </StackPanel>
-        <ListView Grid.Row="1"
-                  x:Name="LvProduct"
-                  SelectionChanged="LvProduct_SelectionChanged" 
-                  >
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid Height="100"
-                          Width="580">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="100"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition Width="280"/>
-                            <ColumnDefinition Width="150"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0"
-                               Source="{Binding PhotoProuct}"
-                               HorizontalAlignment="Stretch"
-                               />
-                        <StackPanel Grid.Column="1"
-                                    Orientation="Vertical">
-                            <TextBlock x:Name="tbckNameProduct"
-                                       Text="{Binding NameProduct}"
-                                       FontSize="20"
-                                       />
-                            <Line X1="350"
-                                  Y1="1"
-                                  Stroke="#00ADB5"
-                                  />
-                            <TextBlock x:Name="tbckDescription"
-                                       Text="{Binding Description}"
-                                       FontSize="14"/>
-
-                        </StackPanel>
-                        <StackPanel Grid.Column="2"
-                                    Orientation="Horizontal"
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    >
-                            <TextBlock x:Name="tbckPrice"
-                                       Text="{Binding Price}"
-                                       FontSize="14"
-                                       />
-                        </StackPanel>
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+        <ListView Grid.Row="1" x:Name="LvUserManager" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Имя" Width="100" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Вид" Width="100" DisplayMemberBinding="{Binding KindName}"/>
+                    <GridViewColumn Header="Разноидность" Width="100" DisplayMemberBinding="{Binding NameBreed}"/>
+                </GridView>
+            </ListView.View>
         </ListView>
-
     </Grid>
 </Page>

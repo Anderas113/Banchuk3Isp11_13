@@ -7,115 +7,70 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AdminPageUser">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="230"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="70"/>
-        </Grid.RowDefinitions>
-        <WrapPanel Grid.Row="0"
+    
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="230"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+            <WrapPanel Grid.Row="0"
                    Orientation="Horizontal"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    >
-            <Button x:Name="btnBackFrm"
-                    Content="&lt;"
-                
-                    Click="btnBackFrm_Click"/>
-            <TextBox x:Name="txbSearch"
-                     TextChanged="txbSearch_TextChanged"
+                <Button x:Name="btnBackFrm"
+                    Content="&lt;"/>
+                <TextBox x:Name="txbSearch"
                      />
-  
 
-        </WrapPanel>
-        <StackPanel Grid.Row="2"       
+
+            </WrapPanel>
+            <StackPanel Grid.Row="2"       
                         Orientation="Horizontal"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center">
-            <Button x:Name="btnLastPage"
+                <Button x:Name="btnLastPage"
                     Content="&lt;"
                    
-                    Click="btnLastPage_Click"
+                 
                     />
-            <TextBlock x:Name="tbckPage"
+                <TextBlock x:Name="tbckPage"
                        Text="1"
                        FontSize="20"
                        />
-            <Button x:Name="btnNextPage"
+                <Button x:Name="btnNextPage"
                     Content=">"
                  
-                    Click="btnNextPage_Click"
+                  
                     />
-        </StackPanel>
-        <StackPanel Grid.Row="3"
+            </StackPanel>
+            <StackPanel Grid.Row="3"
                     Orientation="Horizontal"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-            <Button x:Name="btnEditUser"
-                    Content="Редактировать сотрудника"
-                 
-                    Click="btnEditProduct_Click"
+            <Button x:Name="btnEditManager"
+                    Content="Редактировать Менеджера"
                     />
-            <Button x:Name="btnDelUser"
-                    Content="Удалить сотрудника"
-                 
-                    Click="btnEditProduct_Click"
+            <Button x:Name="btnDelManager"
+                    Content="Удалить Менеджера"
                     />
-            <Button x:Name="btnAddUser"
-                    Content="Добавить сотрудника"
-                    
-                    Click="btnAddProduct_Click"/>
-        </StackPanel>
-        <ListView Grid.Row="1"
-                  x:Name="LvProduct"
-                  SelectionChanged="LvProduct_SelectionChanged" 
-                  >
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid Height="100"
-                          Width="580">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="100"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition Width="280"/>
-                            <ColumnDefinition Width="150"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0"
-                               Source="{Binding PhotoProuct}"
-                               HorizontalAlignment="Stretch"
-                               />
-                        <StackPanel Grid.Column="1"
-                                    Orientation="Vertical">
-                            <TextBlock x:Name="tbckNameProduct"
-                                       Text="{Binding NameProduct}"
-                                       FontSize="20"
-                                       />
-                            <Line X1="350"
-                                  Y1="1"
-                                  Stroke="#00ADB5"
-                                  />
-                            <TextBlock x:Name="tbckDescription"
-                                       Text="{Binding Description}"
-                                       FontSize="14"/>
-
-                        </StackPanel>
-                        <StackPanel Grid.Column="2"
-                                    Orientation="Horizontal"
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    >
-                            <TextBlock x:Name="tbckPrice"
-                                       Text="{Binding Price}"
-                                       FontSize="14"
-                                       />
-                        </StackPanel>
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-
-    </Grid>
+                <Button x:Name="btnAddManager"
+                    Content="Добавить Менеджера"
+                   />
+            </StackPanel>
+        <ListView Grid.Row="1" x:Name="LvUserManager" >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Фамилия" Width="100" DisplayMemberBinding="{Binding LastName}"/>
+                    <GridViewColumn Header="Имя" Width="100" DisplayMemberBinding="{Binding AdminNane}"/>
+                        <GridViewColumn Header="Отчество" Width="100" DisplayMemberBinding="{Binding Patronomyc}"/>
+                        <GridViewColumn Header="Email" Width="100" DisplayMemberBinding="{Binding Email}"/>
+                        <GridViewColumn Header="Телефон" Width="100" DisplayMemberBinding="{Binding Phone}"/>
+                        
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
 </Page>

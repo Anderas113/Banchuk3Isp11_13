@@ -1,0 +1,1124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище VeterenarModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Administrator">
+          <Key>
+            <PropertyRef Name="IdAdmin" />
+          </Key>
+          <Property Name="IdAdmin" Type="int" Nullable="false" />
+          <Property Name="AdminNane" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patronomyc" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="GenderId" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="DateOfBeginWork" Type="date" Nullable="false" />
+          <Property Name="Salary" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Breed">
+          <Key>
+            <PropertyRef Name="IdBreed" />
+          </Key>
+          <Property Name="IdBreed" Type="int" Nullable="false" />
+          <Property Name="NameBreed" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cabinet">
+          <Key>
+            <PropertyRef Name="IdCabinet" />
+          </Key>
+          <Property Name="IdCabinet" Type="int" Nullable="false" />
+          <Property Name="NameCabinet" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ChiefMedicalOfficer">
+          <Key>
+            <PropertyRef Name="IdDoctor" />
+          </Key>
+          <Property Name="IdDoctor" Type="int" Nullable="false" />
+          <Property Name="DoctorNane" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patronomyc" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="GenderId" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="IdSpecality" Type="int" Nullable="false" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="DateOfBeginWork" Type="date" Nullable="false" />
+          <Property Name="Salary" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="IdClient" />
+          </Key>
+          <Property Name="IdClient" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Patronomyc" Type="nvarchar" MaxLength="50" />
+          <Property Name="GenderId" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="DateOfRegestretion" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="IdDoctor" />
+          </Key>
+          <Property Name="IdDoctor" Type="int" Nullable="false" />
+          <Property Name="DoctorNane" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patronomyc" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="GenderId" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="IdSpecality" Type="int" Nullable="false" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="DateOfBeginWork" Type="date" Nullable="false" />
+          <Property Name="Salary" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="GenderID" />
+          </Key>
+          <Property Name="GenderID" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="GenderName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KindOfAnimal">
+          <Key>
+            <PropertyRef Name="IdKind" />
+          </Key>
+          <Property Name="IdKind" Type="int" Nullable="false" />
+          <Property Name="KindName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MedCart">
+          <Key>
+            <PropertyRef Name="IdMedCart" />
+          </Key>
+          <Property Name="IdMedCart" Type="int" Nullable="false" />
+          <Property Name="IdPatient" Type="int" Nullable="false" />
+          <Property Name="DateUpdate" Type="date" Nullable="false" />
+          <Property Name="OrderId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="TimeBeginOrder" Type="datetime" Nullable="false" />
+          <Property Name="TimeEndOrder" Type="datetime" Nullable="false" />
+          <Property Name="IdService" Type="int" Nullable="false" />
+          <Property Name="IdPatient" Type="int" Nullable="false" />
+          <Property Name="IdDoctor" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="IdPatient" />
+          </Key>
+          <Property Name="IdPatient" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="height" Type="int" Nullable="false" />
+          <Property Name="weight" Type="int" Nullable="false" />
+          <Property Name="length" Type="int" Nullable="false" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="DateOfRegestrition" Type="date" Nullable="false" />
+          <Property Name="IdClient" Type="int" Nullable="false" />
+          <Property Name="GenderId" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="IdKind" Type="int" Nullable="false" />
+          <Property Name="IdBreed" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="IdCabinet" />
+            <PropertyRef Name="IdDoctor" />
+          </Key>
+          <Property Name="IdCabinet" Type="int" Nullable="false" />
+          <Property Name="IdDoctor" Type="int" Nullable="false" />
+          <Property Name="NumberOfWeek" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TimeScheduleBegin" Type="time" Precision="7" Nullable="false" />
+          <Property Name="TimeScheduleEnd&#xD;&#xA;TimeScheduleEnd&#xD;&#xA;TimeScheduleEnd" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="IdService" />
+          </Key>
+          <Property Name="IdService" Type="int" Nullable="false" />
+          <Property Name="NameService" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LengTimeService" Type="int" Nullable="false" />
+          <Property Name="DescriptionService" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Cost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Specality">
+          <Key>
+            <PropertyRef Name="IdSpecality" />
+          </Key>
+          <Property Name="IdSpecality" Type="int" Nullable="false" />
+          <Property Name="NameSpecality" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Administr__Gende__30F848ED">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Administrator" Type="Self.Administrator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="GenderID" />
+            </Principal>
+            <Dependent Role="Administrator">
+              <PropertyRef Name="GenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiefMedi__Gende__37A5467C">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="ChiefMedicalOfficer" Type="Self.ChiefMedicalOfficer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="GenderID" />
+            </Principal>
+            <Dependent Role="ChiefMedicalOfficer">
+              <PropertyRef Name="GenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiefMedi__IdSpe__38996AB5">
+          <End Role="Specality" Type="Self.Specality" Multiplicity="1" />
+          <End Role="ChiefMedicalOfficer" Type="Self.ChiefMedicalOfficer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specality">
+              <PropertyRef Name="IdSpecality" />
+            </Principal>
+            <Dependent Role="ChiefMedicalOfficer">
+              <PropertyRef Name="IdSpecality" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Client__GenderId__2E1BDC42">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Client" Type="Self.Client" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="GenderID" />
+            </Principal>
+            <Dependent Role="Client">
+              <PropertyRef Name="GenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Doctor__GenderId__33D4B598">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="GenderID" />
+            </Principal>
+            <Dependent Role="Doctor">
+              <PropertyRef Name="GenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Doctor__IdSpecal__34C8D9D1">
+          <End Role="Specality" Type="Self.Specality" Multiplicity="1" />
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specality">
+              <PropertyRef Name="IdSpecality" />
+            </Principal>
+            <Dependent Role="Doctor">
+              <PropertyRef Name="IdSpecality" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MedCart__IdPatie__48CFD27E">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+          <End Role="MedCart" Type="Self.MedCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="IdPatient" />
+            </Principal>
+            <Dependent Role="MedCart">
+              <PropertyRef Name="IdPatient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MedCart__OrderId__49C3F6B7">
+          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="MedCart" Type="Self.MedCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="MedCart">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__IdDoctor__45F365D3">
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="IdDoctor" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="IdDoctor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__IdPatient__44FF419A">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="IdPatient" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="IdPatient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__IdService__440B1D61">
+          <End Role="Service" Type="Self.Service" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="IdService" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="IdService" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Patient__GenderI__3D5E1FD2">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="GenderID" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="GenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Patient__IdBreed__3F466844">
+          <End Role="Breed" Type="Self.Breed" Multiplicity="1" />
+          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Breed">
+              <PropertyRef Name="IdBreed" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="IdBreed" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Patient__IdClien__3C69FB99">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="IdClient" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Patient__IdKind__3E52440B">
+          <End Role="KindOfAnimal" Type="Self.KindOfAnimal" Multiplicity="1" />
+          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KindOfAnimal">
+              <PropertyRef Name="IdKind" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="IdKind" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Schedule_Cabinet">
+          <End Role="Cabinet" Type="Self.Cabinet" Multiplicity="1" />
+          <End Role="Schedule" Type="Self.Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cabinet">
+              <PropertyRef Name="IdCabinet" />
+            </Principal>
+            <Dependent Role="Schedule">
+              <PropertyRef Name="IdCabinet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Schedule_Doctor">
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="1" />
+          <End Role="Schedule" Type="Self.Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="IdDoctor" />
+            </Principal>
+            <Dependent Role="Schedule">
+              <PropertyRef Name="IdDoctor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище VeterenarModelContainer">
+          <EntitySet Name="Administrator" EntityType="Self.Administrator" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Breed" EntityType="Self.Breed" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cabinet" EntityType="Self.Cabinet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChiefMedicalOfficer" EntityType="Self.ChiefMedicalOfficer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Doctor" EntityType="Self.Doctor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KindOfAnimal" EntityType="Self.KindOfAnimal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MedCart" EntityType="Self.MedCart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Schedule" EntityType="Self.Schedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Specality" EntityType="Self.Specality" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Administr__Gende__30F848ED" Association="Self.FK__Administr__Gende__30F848ED">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Administrator" EntitySet="Administrator" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiefMedi__Gende__37A5467C" Association="Self.FK__ChiefMedi__Gende__37A5467C">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="ChiefMedicalOfficer" EntitySet="ChiefMedicalOfficer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiefMedi__IdSpe__38996AB5" Association="Self.FK__ChiefMedi__IdSpe__38996AB5">
+            <End Role="Specality" EntitySet="Specality" />
+            <End Role="ChiefMedicalOfficer" EntitySet="ChiefMedicalOfficer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Client__GenderId__2E1BDC42" Association="Self.FK__Client__GenderId__2E1BDC42">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Client" EntitySet="Client" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Doctor__GenderId__33D4B598" Association="Self.FK__Doctor__GenderId__33D4B598">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Doctor" EntitySet="Doctor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Doctor__IdSpecal__34C8D9D1" Association="Self.FK__Doctor__IdSpecal__34C8D9D1">
+            <End Role="Specality" EntitySet="Specality" />
+            <End Role="Doctor" EntitySet="Doctor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MedCart__IdPatie__48CFD27E" Association="Self.FK__MedCart__IdPatie__48CFD27E">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="MedCart" EntitySet="MedCart" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MedCart__OrderId__49C3F6B7" Association="Self.FK__MedCart__OrderId__49C3F6B7">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="MedCart" EntitySet="MedCart" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__IdDoctor__45F365D3" Association="Self.FK__Order__IdDoctor__45F365D3">
+            <End Role="Doctor" EntitySet="Doctor" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__IdPatient__44FF419A" Association="Self.FK__Order__IdPatient__44FF419A">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__IdService__440B1D61" Association="Self.FK__Order__IdService__440B1D61">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patient__GenderI__3D5E1FD2" Association="Self.FK__Patient__GenderI__3D5E1FD2">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Patient" EntitySet="Patient" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patient__IdBreed__3F466844" Association="Self.FK__Patient__IdBreed__3F466844">
+            <End Role="Breed" EntitySet="Breed" />
+            <End Role="Patient" EntitySet="Patient" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patient__IdClien__3C69FB99" Association="Self.FK__Patient__IdClien__3C69FB99">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Patient" EntitySet="Patient" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patient__IdKind__3E52440B" Association="Self.FK__Patient__IdKind__3E52440B">
+            <End Role="KindOfAnimal" EntitySet="KindOfAnimal" />
+            <End Role="Patient" EntitySet="Patient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Schedule_Cabinet" Association="Self.FK_Schedule_Cabinet">
+            <End Role="Cabinet" EntitySet="Cabinet" />
+            <End Role="Schedule" EntitySet="Schedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Schedule_Doctor" Association="Self.FK_Schedule_Doctor">
+            <End Role="Doctor" EntitySet="Doctor" />
+            <End Role="Schedule" EntitySet="Schedule" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VeterenarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Administrator">
+          <Key>
+            <PropertyRef Name="IdAdmin" />
+          </Key>
+          <Property Name="IdAdmin" Type="Int32" Nullable="false" />
+          <Property Name="AdminNane" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patronomyc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="GenderId" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateOfBeginWork" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Salary" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Gender" Relationship="Self.FK__Administr__Gende__30F848ED" FromRole="Administrator" ToRole="Gender" />
+        </EntityType>
+        <EntityType Name="Breed">
+          <Key>
+            <PropertyRef Name="IdBreed" />
+          </Key>
+          <Property Name="IdBreed" Type="Int32" Nullable="false" />
+          <Property Name="NameBreed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK__Patient__IdBreed__3F466844" FromRole="Breed" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="Cabinet">
+          <Key>
+            <PropertyRef Name="IdCabinet" />
+          </Key>
+          <Property Name="IdCabinet" Type="Int32" Nullable="false" />
+          <Property Name="NameCabinet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Schedule" Relationship="Self.FK_Schedule_Cabinet" FromRole="Cabinet" ToRole="Schedule" />
+        </EntityType>
+        <EntityType Name="ChiefMedicalOfficer">
+          <Key>
+            <PropertyRef Name="IdDoctor" />
+          </Key>
+          <Property Name="IdDoctor" Type="Int32" Nullable="false" />
+          <Property Name="DoctorNane" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patronomyc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="GenderId" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="IdSpecality" Type="Int32" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateOfBeginWork" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Salary" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Gender" Relationship="Self.FK__ChiefMedi__Gende__37A5467C" FromRole="ChiefMedicalOfficer" ToRole="Gender" />
+          <NavigationProperty Name="Specality" Relationship="Self.FK__ChiefMedi__IdSpe__38996AB5" FromRole="ChiefMedicalOfficer" ToRole="Specality" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="IdClient" />
+          </Key>
+          <Property Name="IdClient" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Patronomyc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GenderId" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateOfRegestretion" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Gender" Relationship="Self.FK__Client__GenderId__2E1BDC42" FromRole="Client" ToRole="Gender" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK__Patient__IdClien__3C69FB99" FromRole="Client" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="IdDoctor" />
+          </Key>
+          <Property Name="IdDoctor" Type="Int32" Nullable="false" />
+          <Property Name="DoctorNane" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patronomyc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="GenderId" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="IdSpecality" Type="Int32" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateOfBeginWork" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Salary" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Gender" Relationship="Self.FK__Doctor__GenderId__33D4B598" FromRole="Doctor" ToRole="Gender" />
+          <NavigationProperty Name="Specality" Relationship="Self.FK__Doctor__IdSpecal__34C8D9D1" FromRole="Doctor" ToRole="Specality" />
+          <NavigationProperty Name="Order" Relationship="Self.FK__Order__IdDoctor__45F365D3" FromRole="Doctor" ToRole="Order" />
+          <NavigationProperty Name="Schedule" Relationship="Self.FK_Schedule_Doctor" FromRole="Doctor" ToRole="Schedule" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="GenderID" />
+          </Key>
+          <Property Name="GenderID" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="GenderName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Administrator" Relationship="Self.FK__Administr__Gende__30F848ED" FromRole="Gender" ToRole="Administrator" />
+          <NavigationProperty Name="ChiefMedicalOfficer" Relationship="Self.FK__ChiefMedi__Gende__37A5467C" FromRole="Gender" ToRole="ChiefMedicalOfficer" />
+          <NavigationProperty Name="Client" Relationship="Self.FK__Client__GenderId__2E1BDC42" FromRole="Gender" ToRole="Client" />
+          <NavigationProperty Name="Doctor" Relationship="Self.FK__Doctor__GenderId__33D4B598" FromRole="Gender" ToRole="Doctor" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK__Patient__GenderI__3D5E1FD2" FromRole="Gender" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="KindOfAnimal">
+          <Key>
+            <PropertyRef Name="IdKind" />
+          </Key>
+          <Property Name="IdKind" Type="Int32" Nullable="false" />
+          <Property Name="KindName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK__Patient__IdKind__3E52440B" FromRole="KindOfAnimal" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="MedCart">
+          <Key>
+            <PropertyRef Name="IdMedCart" />
+          </Key>
+          <Property Name="IdMedCart" Type="Int32" Nullable="false" />
+          <Property Name="IdPatient" Type="Int32" Nullable="false" />
+          <Property Name="DateUpdate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK__MedCart__IdPatie__48CFD27E" FromRole="MedCart" ToRole="Patient" />
+          <NavigationProperty Name="Order" Relationship="Self.FK__MedCart__OrderId__49C3F6B7" FromRole="MedCart" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="TimeBeginOrder" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TimeEndOrder" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IdService" Type="Int32" Nullable="false" />
+          <Property Name="IdPatient" Type="Int32" Nullable="false" />
+          <Property Name="IdDoctor" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Doctor" Relationship="Self.FK__Order__IdDoctor__45F365D3" FromRole="Order" ToRole="Doctor" />
+          <NavigationProperty Name="MedCart" Relationship="Self.FK__MedCart__OrderId__49C3F6B7" FromRole="Order" ToRole="MedCart" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK__Order__IdPatient__44FF419A" FromRole="Order" ToRole="Patient" />
+          <NavigationProperty Name="Service" Relationship="Self.FK__Order__IdService__440B1D61" FromRole="Order" ToRole="Service" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="IdPatient" />
+          </Key>
+          <Property Name="IdPatient" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="height" Type="Int32" Nullable="false" />
+          <Property Name="weight" Type="Int32" Nullable="false" />
+          <Property Name="length" Type="Int32" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateOfRegestrition" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IdClient" Type="Int32" Nullable="false" />
+          <Property Name="GenderId" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="IdKind" Type="Int32" Nullable="false" />
+          <Property Name="IdBreed" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Breed" Relationship="Self.FK__Patient__IdBreed__3F466844" FromRole="Patient" ToRole="Breed" />
+          <NavigationProperty Name="Client" Relationship="Self.FK__Patient__IdClien__3C69FB99" FromRole="Patient" ToRole="Client" />
+          <NavigationProperty Name="Gender" Relationship="Self.FK__Patient__GenderI__3D5E1FD2" FromRole="Patient" ToRole="Gender" />
+          <NavigationProperty Name="KindOfAnimal" Relationship="Self.FK__Patient__IdKind__3E52440B" FromRole="Patient" ToRole="KindOfAnimal" />
+          <NavigationProperty Name="MedCart" Relationship="Self.FK__MedCart__IdPatie__48CFD27E" FromRole="Patient" ToRole="MedCart" />
+          <NavigationProperty Name="Order" Relationship="Self.FK__Order__IdPatient__44FF419A" FromRole="Patient" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="IdCabinet" />
+            <PropertyRef Name="IdDoctor" />
+          </Key>
+          <Property Name="IdCabinet" Type="Int32" Nullable="false" />
+          <Property Name="IdDoctor" Type="Int32" Nullable="false" />
+          <Property Name="NumberOfWeek" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TimeScheduleBegin" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="TimeScheduleEnd__TimeScheduleEnd__TimeScheduleEnd" Type="Time" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Cabinet" Relationship="Self.FK_Schedule_Cabinet" FromRole="Schedule" ToRole="Cabinet" />
+          <NavigationProperty Name="Doctor" Relationship="Self.FK_Schedule_Doctor" FromRole="Schedule" ToRole="Doctor" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="IdService" />
+          </Key>
+          <Property Name="IdService" Type="Int32" Nullable="false" />
+          <Property Name="NameService" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LengTimeService" Type="Int32" Nullable="false" />
+          <Property Name="DescriptionService" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cost" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="Self.FK__Order__IdService__440B1D61" FromRole="Service" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Specality">
+          <Key>
+            <PropertyRef Name="IdSpecality" />
+          </Key>
+          <Property Name="IdSpecality" Type="Int32" Nullable="false" />
+          <Property Name="NameSpecality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ChiefMedicalOfficer" Relationship="Self.FK__ChiefMedi__IdSpe__38996AB5" FromRole="Specality" ToRole="ChiefMedicalOfficer" />
+          <NavigationProperty Name="Doctor" Relationship="Self.FK__Doctor__IdSpecal__34C8D9D1" FromRole="Specality" ToRole="Doctor" />
+        </EntityType>
+        <Association Name="FK__Administr__Gende__30F848ED">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Administrator" Type="Self.Administrator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="GenderID" />
+            </Principal>
+            <Dependent Role="Administrator">
+              <PropertyRef Name="GenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Patient__IdBreed__3F466844">
+          <End Role="Breed" Type="Self.Breed" Multiplicity="1" />
+          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Breed">
+              <PropertyRef Name="IdBreed" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="IdBreed" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Schedule_Cabinet">
+          <End Role="Cabinet" Type="Self.Cabinet" Multiplicity="1" />
+          <End Role="Schedule" Type="Self.Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cabinet">
+              <PropertyRef Name="IdCabinet" />
+            </Principal>
+            <Dependent Role="Schedule">
+              <PropertyRef Name="IdCabinet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiefMedi__Gende__37A5467C">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="ChiefMedicalOfficer" Type="Self.ChiefMedicalOfficer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="GenderID" />
+            </Principal>
+            <Dependent Role="ChiefMedicalOfficer">
+              <PropertyRef Name="GenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiefMedi__IdSpe__38996AB5">
+          <End Role="Specality" Type="Self.Specality" Multiplicity="1" />
+          <End Role="ChiefMedicalOfficer" Type="Self.ChiefMedicalOfficer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specality">
+              <PropertyRef Name="IdSpecality" />
+            </Principal>
+            <Dependent Role="ChiefMedicalOfficer">
+              <PropertyRef Name="IdSpecality" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Client__GenderId__2E1BDC42">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Client" Type="Self.Client" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="GenderID" />
+            </Principal>
+            <Dependent Role="Client">
+              <PropertyRef Name="GenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Patient__IdClien__3C69FB99">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="IdClient" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Doctor__GenderId__33D4B598">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="GenderID" />
+            </Principal>
+            <Dependent Role="Doctor">
+              <PropertyRef Name="GenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Doctor__IdSpecal__34C8D9D1">
+          <End Role="Specality" Type="Self.Specality" Multiplicity="1" />
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specality">
+              <PropertyRef Name="IdSpecality" />
+            </Principal>
+            <Dependent Role="Doctor">
+              <PropertyRef Name="IdSpecality" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__IdDoctor__45F365D3">
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="IdDoctor" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="IdDoctor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Schedule_Doctor">
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="1" />
+          <End Role="Schedule" Type="Self.Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="IdDoctor" />
+            </Principal>
+            <Dependent Role="Schedule">
+              <PropertyRef Name="IdDoctor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Patient__GenderI__3D5E1FD2">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="GenderID" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="GenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Patient__IdKind__3E52440B">
+          <End Role="KindOfAnimal" Type="Self.KindOfAnimal" Multiplicity="1" />
+          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KindOfAnimal">
+              <PropertyRef Name="IdKind" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="IdKind" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MedCart__IdPatie__48CFD27E">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+          <End Role="MedCart" Type="Self.MedCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="IdPatient" />
+            </Principal>
+            <Dependent Role="MedCart">
+              <PropertyRef Name="IdPatient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MedCart__OrderId__49C3F6B7">
+          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="MedCart" Type="Self.MedCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="MedCart">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__IdPatient__44FF419A">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="IdPatient" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="IdPatient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__IdService__440B1D61">
+          <End Role="Service" Type="Self.Service" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="IdService" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="IdService" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="VeterenarEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Administrator" EntityType="Self.Administrator" />
+          <EntitySet Name="Breed" EntityType="Self.Breed" />
+          <EntitySet Name="Cabinet" EntityType="Self.Cabinet" />
+          <EntitySet Name="ChiefMedicalOfficer" EntityType="Self.ChiefMedicalOfficer" />
+          <EntitySet Name="Client" EntityType="Self.Client" />
+          <EntitySet Name="Doctor" EntityType="Self.Doctor" />
+          <EntitySet Name="Gender" EntityType="Self.Gender" />
+          <EntitySet Name="KindOfAnimal" EntityType="Self.KindOfAnimal" />
+          <EntitySet Name="MedCart" EntityType="Self.MedCart" />
+          <EntitySet Name="Order" EntityType="Self.Order" />
+          <EntitySet Name="Patient" EntityType="Self.Patient" />
+          <EntitySet Name="Schedule" EntityType="Self.Schedule" />
+          <EntitySet Name="Service" EntityType="Self.Service" />
+          <EntitySet Name="Specality" EntityType="Self.Specality" />
+          <AssociationSet Name="FK__Administr__Gende__30F848ED" Association="Self.FK__Administr__Gende__30F848ED">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Administrator" EntitySet="Administrator" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patient__IdBreed__3F466844" Association="Self.FK__Patient__IdBreed__3F466844">
+            <End Role="Breed" EntitySet="Breed" />
+            <End Role="Patient" EntitySet="Patient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Schedule_Cabinet" Association="Self.FK_Schedule_Cabinet">
+            <End Role="Cabinet" EntitySet="Cabinet" />
+            <End Role="Schedule" EntitySet="Schedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiefMedi__Gende__37A5467C" Association="Self.FK__ChiefMedi__Gende__37A5467C">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="ChiefMedicalOfficer" EntitySet="ChiefMedicalOfficer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiefMedi__IdSpe__38996AB5" Association="Self.FK__ChiefMedi__IdSpe__38996AB5">
+            <End Role="Specality" EntitySet="Specality" />
+            <End Role="ChiefMedicalOfficer" EntitySet="ChiefMedicalOfficer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Client__GenderId__2E1BDC42" Association="Self.FK__Client__GenderId__2E1BDC42">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Client" EntitySet="Client" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patient__IdClien__3C69FB99" Association="Self.FK__Patient__IdClien__3C69FB99">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Patient" EntitySet="Patient" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Doctor__GenderId__33D4B598" Association="Self.FK__Doctor__GenderId__33D4B598">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Doctor" EntitySet="Doctor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Doctor__IdSpecal__34C8D9D1" Association="Self.FK__Doctor__IdSpecal__34C8D9D1">
+            <End Role="Specality" EntitySet="Specality" />
+            <End Role="Doctor" EntitySet="Doctor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__IdDoctor__45F365D3" Association="Self.FK__Order__IdDoctor__45F365D3">
+            <End Role="Doctor" EntitySet="Doctor" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Schedule_Doctor" Association="Self.FK_Schedule_Doctor">
+            <End Role="Doctor" EntitySet="Doctor" />
+            <End Role="Schedule" EntitySet="Schedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patient__GenderI__3D5E1FD2" Association="Self.FK__Patient__GenderI__3D5E1FD2">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Patient" EntitySet="Patient" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patient__IdKind__3E52440B" Association="Self.FK__Patient__IdKind__3E52440B">
+            <End Role="KindOfAnimal" EntitySet="KindOfAnimal" />
+            <End Role="Patient" EntitySet="Patient" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MedCart__IdPatie__48CFD27E" Association="Self.FK__MedCart__IdPatie__48CFD27E">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="MedCart" EntitySet="MedCart" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MedCart__OrderId__49C3F6B7" Association="Self.FK__MedCart__OrderId__49C3F6B7">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="MedCart" EntitySet="MedCart" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__IdPatient__44FF419A" Association="Self.FK__Order__IdPatient__44FF419A">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__IdService__440B1D61" Association="Self.FK__Order__IdService__440B1D61">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище VeterenarModelContainer" CdmEntityContainer="VeterenarEntities">
+          <EntitySetMapping Name="Administrator">
+            <EntityTypeMapping TypeName="VeterenarModel.Administrator">
+              <MappingFragment StoreEntitySet="Administrator">
+                <ScalarProperty Name="IdAdmin" ColumnName="IdAdmin" />
+                <ScalarProperty Name="AdminNane" ColumnName="AdminNane" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Patronomyc" ColumnName="Patronomyc" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="DateOfBeginWork" ColumnName="DateOfBeginWork" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Breed">
+            <EntityTypeMapping TypeName="VeterenarModel.Breed">
+              <MappingFragment StoreEntitySet="Breed">
+                <ScalarProperty Name="IdBreed" ColumnName="IdBreed" />
+                <ScalarProperty Name="NameBreed" ColumnName="NameBreed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cabinet">
+            <EntityTypeMapping TypeName="VeterenarModel.Cabinet">
+              <MappingFragment StoreEntitySet="Cabinet">
+                <ScalarProperty Name="IdCabinet" ColumnName="IdCabinet" />
+                <ScalarProperty Name="NameCabinet" ColumnName="NameCabinet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChiefMedicalOfficer">
+            <EntityTypeMapping TypeName="VeterenarModel.ChiefMedicalOfficer">
+              <MappingFragment StoreEntitySet="ChiefMedicalOfficer">
+                <ScalarProperty Name="IdDoctor" ColumnName="IdDoctor" />
+                <ScalarProperty Name="DoctorNane" ColumnName="DoctorNane" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Patronomyc" ColumnName="Patronomyc" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+                <ScalarProperty Name="IdSpecality" ColumnName="IdSpecality" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="DateOfBeginWork" ColumnName="DateOfBeginWork" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Client">
+            <EntityTypeMapping TypeName="VeterenarModel.Client">
+              <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Patronomyc" ColumnName="Patronomyc" />
+                <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="DateOfRegestretion" ColumnName="DateOfRegestretion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doctor">
+            <EntityTypeMapping TypeName="VeterenarModel.Doctor">
+              <MappingFragment StoreEntitySet="Doctor">
+                <ScalarProperty Name="IdDoctor" ColumnName="IdDoctor" />
+                <ScalarProperty Name="DoctorNane" ColumnName="DoctorNane" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Patronomyc" ColumnName="Patronomyc" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+                <ScalarProperty Name="IdSpecality" ColumnName="IdSpecality" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="DateOfBeginWork" ColumnName="DateOfBeginWork" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gender">
+            <EntityTypeMapping TypeName="VeterenarModel.Gender">
+              <MappingFragment StoreEntitySet="Gender">
+                <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+                <ScalarProperty Name="GenderName" ColumnName="GenderName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KindOfAnimal">
+            <EntityTypeMapping TypeName="VeterenarModel.KindOfAnimal">
+              <MappingFragment StoreEntitySet="KindOfAnimal">
+                <ScalarProperty Name="IdKind" ColumnName="IdKind" />
+                <ScalarProperty Name="KindName" ColumnName="KindName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MedCart">
+            <EntityTypeMapping TypeName="VeterenarModel.MedCart">
+              <MappingFragment StoreEntitySet="MedCart">
+                <ScalarProperty Name="IdMedCart" ColumnName="IdMedCart" />
+                <ScalarProperty Name="IdPatient" ColumnName="IdPatient" />
+                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order">
+            <EntityTypeMapping TypeName="VeterenarModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="TimeBeginOrder" ColumnName="TimeBeginOrder" />
+                <ScalarProperty Name="TimeEndOrder" ColumnName="TimeEndOrder" />
+                <ScalarProperty Name="IdService" ColumnName="IdService" />
+                <ScalarProperty Name="IdPatient" ColumnName="IdPatient" />
+                <ScalarProperty Name="IdDoctor" ColumnName="IdDoctor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patient">
+            <EntityTypeMapping TypeName="VeterenarModel.Patient">
+              <MappingFragment StoreEntitySet="Patient">
+                <ScalarProperty Name="IdPatient" ColumnName="IdPatient" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="height" ColumnName="height" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="length" ColumnName="length" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="DateOfRegestrition" ColumnName="DateOfRegestrition" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+                <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+                <ScalarProperty Name="IdKind" ColumnName="IdKind" />
+                <ScalarProperty Name="IdBreed" ColumnName="IdBreed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Schedule">
+            <EntityTypeMapping TypeName="VeterenarModel.Schedule">
+              <MappingFragment StoreEntitySet="Schedule">
+                <ScalarProperty Name="IdCabinet" ColumnName="IdCabinet" />
+                <ScalarProperty Name="IdDoctor" ColumnName="IdDoctor" />
+                <ScalarProperty Name="NumberOfWeek" ColumnName="NumberOfWeek" />
+                <ScalarProperty Name="TimeScheduleBegin" ColumnName="TimeScheduleBegin" />
+                <ScalarProperty Name="TimeScheduleEnd__TimeScheduleEnd__TimeScheduleEnd" ColumnName="TimeScheduleEnd&#xD;&#xA;TimeScheduleEnd&#xD;&#xA;TimeScheduleEnd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service">
+            <EntityTypeMapping TypeName="VeterenarModel.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="IdService" ColumnName="IdService" />
+                <ScalarProperty Name="NameService" ColumnName="NameService" />
+                <ScalarProperty Name="LengTimeService" ColumnName="LengTimeService" />
+                <ScalarProperty Name="DescriptionService" ColumnName="DescriptionService" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Specality">
+            <EntityTypeMapping TypeName="VeterenarModel.Specality">
+              <MappingFragment StoreEntitySet="Specality">
+                <ScalarProperty Name="IdSpecality" ColumnName="IdSpecality" />
+                <ScalarProperty Name="NameSpecality" ColumnName="NameSpecality" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
