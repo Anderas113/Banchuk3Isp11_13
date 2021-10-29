@@ -19,22 +19,22 @@
             <Button x:Name="btnListService"
                     Content="Список услуг"
                    Background="Khaki"
+                    Click="BtnClickPathient"
                     />
             <Button x:Name="btnListProduct"
                     Content="Список пациентов"
                    Background="Khaki"
-                    />
-            <Button x:Name="btnListUser"
-                    Content="Список совещаний"
-                    Background="Khaki"
+                      Click="BtnClickService"
                     />
             <Button x:Name="btnListExitProfile"
                     Content="Выйти из профиля"
                    Background="Khaki"
+                    Click="btnListExitProfileClick"
                     />
             <Button x:Name="btnListCloseApp"
                     Content="Закрыть Приложение"
                    Background="Khaki"
+                    Click="BtnClickExit"
                     />
         </StackPanel>
 

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Banchuk3Isp11_13.EF.Entfr;
 
 namespace Banchuk3Isp11_13.Windows.Veterinar
 {
@@ -23,6 +24,11 @@ namespace Banchuk3Isp11_13.Windows.Veterinar
         public ClientPage()
         {
             InitializeComponent();
+            LvUserPatient.ItemsSource = Context.Patient.ToList();
+            LvUserPatient.ItemsSource = Context.KindOfAnimal.ToList();
+            LvUserPatient.ItemsSource = Context.Breed.ToList();
+            LvUserPatient.ItemsSource = Context.Client.ToList();
+
         }
     }
 }

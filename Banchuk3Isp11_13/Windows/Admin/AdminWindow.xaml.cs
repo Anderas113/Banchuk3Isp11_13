@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Banchuk3Isp11_13.Windows.Admin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,28 @@ namespace Banchuk3Isp11_13.Windows
         public AdminWindow()
         {
             InitializeComponent();
+        }
+        private void BtnClickMeneger(object sender, RoutedEventArgs e)
+        {
+            frmMainAdmin.Navigate(new AdminPageUser());
+        }
+        private void BtnClickVeterinar(object sender, RoutedEventArgs e)
+        {
+            frmMainAdmin.Navigate(new PageAdminVetirinar());
+        }
+        private void BtnClickService(object sender, RoutedEventArgs e)
+        {
+            frmMainAdmin.Navigate(new PageServiceAdmin());
+        }
+        private void btnListExitProfileClick(object sender, RoutedEventArgs e)
+        {
+            AuthWindow mw = new AuthWindow();
+            mw.Show();
+            this.Close();
+        }
+        private void BtnClickExit(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

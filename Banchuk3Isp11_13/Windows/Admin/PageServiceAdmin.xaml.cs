@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Banchuk3Isp11_13.EF.Entfr;
 
 namespace Banchuk3Isp11_13.Windows.Admin
 {
@@ -23,6 +24,7 @@ namespace Banchuk3Isp11_13.Windows.Admin
         public PageServiceAdmin()
         {
             InitializeComponent();
+            LvServicer.ItemsSource = Context.Service.ToList();
         }
     }
 }

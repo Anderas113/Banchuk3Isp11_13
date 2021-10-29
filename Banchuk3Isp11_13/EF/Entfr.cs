@@ -8,6 +8,6 @@ namespace Banchuk3Isp11_13.EF
 {
     class Entfr
     {
-        public static VeterenarEntities Context { get; } = new VeterenarEntities();
+        public static VeterenarEntities Context = new VeterenarEntities();
     }
 }

@@ -59,12 +59,15 @@
                     Content="Добавить услугу"
                    />
         </StackPanel>
-        <ListView Grid.Row="1" x:Name="LvUserManager" >
+        <ListView Grid.Row="1" x:Name="LvUserPatient" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Имя" Width="100" DisplayMemberBinding="{Binding Name}"/>
                     <GridViewColumn Header="Вид" Width="100" DisplayMemberBinding="{Binding KindName}"/>
                     <GridViewColumn Header="Разноидность" Width="100" DisplayMemberBinding="{Binding NameBreed}"/>
+                    <GridViewColumn Header="Имя Хозина" Width="100" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Фамилия Хозяина" Width="120" DisplayMemberBinding="{Binding KindName}"/>
+                    <GridViewColumn Header="Дата рождения" Width="100" DisplayMemberBinding="{Binding DateOfBirth}"/>
                 </GridView>
             </ListView.View>
         </ListView>

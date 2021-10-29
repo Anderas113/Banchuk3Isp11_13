@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Banchuk3Isp11_13.EF;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,5 +27,83 @@ namespace Banchuk3Isp11_13
         {
             InitializeComponent();
         }
+        public DataTable Select(string SelectSql)
+        {
+            DataTable dataTable = new DataTable("dataBase");
+            SqlConnection sqlConnection = new SqlConnection("server=DESKTOP-RAQ0KCC;Trusted_Connection=Yes;DataBase=Veterenar");
+            sqlConnection.Open();
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandText = SelectSql;
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+            sqlDataAdapter.Fill(dataTable);
+            return dataTable;
+        }
+        private void EnterClick(object sender, RoutedEventArgs e)
+        {
+  
+            if (RoleList.SelectedValue == Veterinar)
+            {
+                if (Login.Text.Length > 0) // проверяем введён ли логин     
+                {
+                    if (password.Password.Length > 0) // проверяем введён ли пароль         
+                    {             // ищем в базе данных пользователя с такими данными         
+                        DataTable dt_user = Select("SELECT * FROM [dbo].[Doctor] WHERE [Email] = '" + Login.Text + "' AND [Phone] = '" + password.Password + "'");
+                        if (dt_user.Rows.Count > 0) // если такая запись существует       
+                        {
+                            Banchuk3Isp11_13.Windows.VeterinarWindow aM = new Banchuk3Isp11_13.Windows.VeterinarWindow();
+                            aM.Show();
+                            Application.Current.MainWindow.Close();
+                        }
+                        else MessageBox.Show("Пользователя не найден"); // выводим ошибку  
+                    }
+                    else MessageBox.Show("Введите пароль"); // выводим ошибку    
+                }
+                else MessageBox.Show("Введите логин"); // выводим ошибку 
+            }
+            else if (RoleList.SelectedValue == Meneger)
+            {
+                if (Login.Text.Length > 0) // проверяем введён ли логин     
+                {
+                    if (password.Password.Length > 0) // проверяем введён ли пароль         
+                    {             // ищем в базе данных пользователя с такими данными         
+                        DataTable dt_user = Select("SELECT * FROM [dbo].[Administrator] WHERE [Email] = '" + Login.Text + "' AND [Phone] = '" + password.Password + "'");
+                        if (dt_user.Rows.Count > 0) // если такая запись существует       
+                        {
+                            Banchuk3Isp11_13.Windows.MenegerWindow aM = new Banchuk3Isp11_13.Windows.MenegerWindow();
+                            aM.Show();
+                            Application.Current.MainWindow.Close();
+                        }
+                        else MessageBox.Show("Пользователя не найден"); // выводим ошибку  
+                    }
+                    else MessageBox.Show("Введите пароль"); // выводим ошибку    
+                }
+                else MessageBox.Show("Введите логин"); // выводим ошибку 
+            }
+            else if (RoleList.SelectedValue == Admin)
+            {
+                if (Login.Text.Length > 0) // проверяем введён ли логин     
+                {
+                    if (password.Password.Length > 0) // проверяем введён ли пароль         
+                    {             // ищем в базе данных пользователя с такими данными         
+                        DataTable dt_user = Select("SELECT * FROM [dbo].[ChiefMedicalOfficer] WHERE [Email] = '" + Login.Text + "' AND [Phone] = '" + password.Password + "'");
+                        if (dt_user.Rows.Count > 0) // если такая запись существует       
+                        {
+                            Banchuk3Isp11_13.Windows.AdminWindow aM = new Banchuk3Isp11_13.Windows.AdminWindow();
+                            aM.Show();
+                            Application.Current.MainWindow.Close();
+                        }
+                        else MessageBox.Show("Пользователя не найден"); // выводим ошибку  
+                    }
+                    else MessageBox.Show("Введите пароль"); // выводим ошибку    
+                }
+                else MessageBox.Show("Введите логин"); // выводим ошибку 
+            }
+            else
+            { MessageBox.Show("Пожалуста выберити роль"); }
+            }
+            private void CloseClick(object sender, RoutedEventArgs e)
+            {
+                this.Close();
+            }
+        }
     }
-}

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Banchuk3Isp11_13.Windows.Veterinar;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,24 @@ namespace Banchuk3Isp11_13.Windows
         public VeterinarWindow()
         {
             InitializeComponent();
+        }
+        private void BtnClickPathient(object sender, RoutedEventArgs e)
+        {
+            frmMainAdmin.Navigate(new ClientPage());
+        }
+        private void BtnClickService(object sender, RoutedEventArgs e)
+        {
+            frmMainAdmin.Navigate(new PageService());
+        }
+        private void btnListExitProfileClick(object sender, RoutedEventArgs e)
+        {
+            AuthWindow mw = new AuthWindow();
+            mw.Show();
+            this.Close();
+        }
+        private void BtnClickExit(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

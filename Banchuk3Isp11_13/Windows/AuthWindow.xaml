@@ -14,17 +14,17 @@
                    FontSize="30"
                    Width="270"
                    Height="35"/>
-        <TextBlock Text="Логин:" HorizontalAlignment="Center" Margin="-165 -90 0 0"  FontSize="15" Height="25" Width="45" />
-        <TextBox  HorizontalAlignment="Center" Margin="90 -90 0 0"  FontSize="15" Height="25" Width="200" />
+        <TextBlock  Text="Логин:" HorizontalAlignment="Center" Margin="-165 -90 0 0"  FontSize="15" Height="25" Width="45" />
+        <TextBox x:Name="Login" HorizontalAlignment="Center" Margin="90 -90 0 0"  FontSize="15" Height="25" Width="200" />
         <TextBlock Text="Роль:" HorizontalAlignment="Center" Margin="-165 -20 0 0"  FontSize="15" Height="25" Width="45" />
-        <ComboBox Name="phonesList" HorizontalAlignment="Center" Margin="90 -20 0 0"  FontSize="15" Height="25" Width="200">
-            <TextBlock>Ветеринар</TextBlock>
-            <TextBlock>Администратор</TextBlock>
-            <TextBlock>Менеджер</TextBlock>
+        <ComboBox Name="RoleList" HorizontalAlignment="Center" Margin="90 -20 0 0"  FontSize="15" Height="25" Width="200">
+            <TextBlock x:Name="Veterinar">Ветеринар</TextBlock>
+            <TextBlock x:Name="Admin">Администратор</TextBlock>
+            <TextBlock x:Name="Meneger">Менеджер</TextBlock>
         </ComboBox>
             <TextBlock Text="Пароль:" HorizontalAlignment="Center" Margin="-165 50 0 0"  FontSize="15" Height="25" Width="55" />
-        <PasswordBox  HorizontalAlignment="Center" Margin="90 50 0 0"  FontSize="15" Height="25" Width="200" />
-        <Button Height="25" Width="100" Margin="150 150 0 0" Content="Войти" FontSize="15"/>
-        <Button Height="25" Width="100" Margin="-150 150 0 0" Content="Выйти" FontSize="15"/>
+        <PasswordBox x:Name="password"  HorizontalAlignment="Center" Margin="90 50 0 0"  FontSize="15" Height="25" Width="200" />
+        <Button x:Name="Enter" Click="EnterClick" Height="25" Width="100" Margin="150 150 0 0" Content="Войти" FontSize="15"/>
+        <Button x:Name="Closes" Click="CloseClick" Height="25" Width="100" Margin="-150 150 0 0" Content="Выйти" FontSize="15"/>
     </Grid>
 </Window>

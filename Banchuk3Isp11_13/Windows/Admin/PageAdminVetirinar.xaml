@@ -60,7 +60,7 @@
                     Content="Добавить услугу"
                    />
         </StackPanel>
-        <ListView Grid.Row="1" x:Name="LvUserManager" >
+        <ListView Grid.Row="1" x:Name="LvUserVeterenar" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Фамилия" Width="100" DisplayMemberBinding="{Binding LastName}"/>

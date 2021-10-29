@@ -60,7 +60,7 @@
                     Content="Добавить услугу"
                    />
         </StackPanel>
-        <ListView Grid.Row="1" x:Name="LvUserDoctor">
+        <ListView Grid.Row="1" x:Name="LvServicer">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Название Услиги" Width="100" DisplayMemberBinding="{Binding NameService}"/>
