@@ -131,6 +131,21 @@
     <Compile Include="Windows\Admin\PageServiceAdmin.xaml.cs">
       <DependentUpon>PageServiceAdmin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Meneger\AddWindowClient.xaml.cs">
+      <DependentUpon>AddWindowClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Meneger\AddWindowPatient.xaml.cs">
+      <DependentUpon>AddWindowPatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Meneger\EditWindowClient.xaml.cs">
+      <DependentUpon>EditWindowClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Meneger\EditWindowPatient.xaml.cs">
+      <DependentUpon>EditWindowPatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Meneger\ManagerPagePatient.xaml.cs">
+      <DependentUpon>ManagerPagePatient.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Meneger\MenegerWindow.xaml.cs">
       <DependentUpon>MenegerWindow.xaml</DependentUpon>
     </Compile>
@@ -177,6 +192,26 @@
       <DependentUpon>AuthWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\Meneger\AddWindowClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Meneger\AddWindowPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Meneger\EditWindowClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Meneger\EditWindowPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Meneger\ManagerPagePatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\Meneger\MenegerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -24,6 +24,10 @@ namespace Banchuk3Isp11_13.Windows
         {
             InitializeComponent();
         }
+        private void BtnCkickPatient(object sender, RoutedEventArgs e)
+        {
+            frmMainAdmin.Navigate(new ManagerPagePatient());
+        }
         private void BtnCkickClient(object sender, RoutedEventArgs e)
         {
             frmMainAdmin.Navigate(new PageMaster());

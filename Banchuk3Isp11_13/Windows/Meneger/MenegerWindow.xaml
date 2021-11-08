@@ -16,6 +16,11 @@
                     Orientation="Vertical"
                     Background="Khaki"
                     VerticalAlignment="Center">
+            <Button x:Name="btnListPatient"
+                    Content="Список Пациентов"
+                   Background="Khaki"
+                    Click="BtnCkickPatient"
+                    />
             <Button x:Name="btnListProduct"
                     Content="Список клиентов"
                    Background="Khaki"

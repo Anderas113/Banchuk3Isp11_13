@@ -67,7 +67,6 @@
                     <GridViewColumn Header="Длительность" Width="100" DisplayMemberBinding="{Binding LengTimeService}"/>
                     <GridViewColumn Header="Описание услуги" Width="100" DisplayMemberBinding="{Binding DescriptionService}"/>
                     <GridViewColumn Header="Цена услуги" Width="100" DisplayMemberBinding="{Binding Cost}"/>
-
                 </GridView>
             </ListView.View>
         </ListView>

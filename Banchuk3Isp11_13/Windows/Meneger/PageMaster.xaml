@@ -51,12 +51,15 @@
                     VerticalAlignment="Center">
             <Button x:Name="btnEditManager"
                     Content="Редактировать Клиента"
+                      Click="btnEditClientClick"
                     />
             <Button x:Name="btnDelManager"
                     Content="Удалить Клиента"
+                    Click="btnDelClient"
                     />
             <Button x:Name="btnAddManager"
                     Content="Добавить Клиента"
+                    Click="btnAddClientClick"
                    />
         </StackPanel>
         <ListView Grid.Row="1" x:Name="LvUserClient" >
