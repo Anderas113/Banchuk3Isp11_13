@@ -8,7 +8,7 @@
         Title="AddWindowClient" Height="450" Width="350">
     <Grid>
         <StackPanel>
-            <TextBlock Text="Имя:" Height="19" Width="45" Margin="-290 0 0 0"/>
+            <TextBlock Text="Имя:" Height="19" Width="45" Margin="-290 10 0 0"/>
             <TextBox x:Name="Name" Height="20" Width="270" Margin="55 -20 0 0"/>
             <TextBlock Text="Фамилия:" Height="19" Width="65" Margin="-270 10 0 0"/>
             <TextBox x:Name="FName" Height="20" Width="270" Margin="55 -20 0 0"/>
@@ -22,9 +22,7 @@
             <TextBox x:Name="Phone" Height="20" Width="270" Margin="55 -20 0 0"/>
             <TextBlock Text="Дата рождения:" Height="19" Width="95" Margin="-245 10 0 0"/>
             <TextBox x:Name="Date" Text="{Binding ElementName=cldSample, Path=SelectedDate, StringFormat=d, UpdateSourceTrigger=PropertyChanged}"  Height="19" Width="190" Margin="55 -20 0 0" />
-            <Calendar x:Name="calendar1" FirstDayOfWeek="Monday"
-        SelectedDatesChanged="calendar_SelectedDatesChanged">
-            </Calendar>
+            <Calendar x:Name="calendar1" FirstDayOfWeek="Monday" SelectedDatesChanged="calendar_SelectedDatesChanged"/>
             <Button x:Name="Close" Content="Закрыть" Height="19" Width="65" Margin="-270 10 0 0" Click="ClickClose"/>
             <Button x:Name="Add" Content="Сохранить" Height="19" Width="65" Margin="270 -20 0 0" Click="ClickAdd"/>
         </StackPanel>

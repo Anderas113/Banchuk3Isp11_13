@@ -8,7 +8,7 @@
         Title="EditWindowClient" Height="450" Width="350">
     <Grid>
         <StackPanel>
-            <TextBlock Text="Имя:" Height="19" Width="45" Margin="-290 0 0 0"/>
+            <TextBlock Text="Имя:" Height="19" Width="45" Margin="-290 10 0 0"/>
             <TextBox x:Name="Name" Height="20" Width="270" Margin="55 -20 0 0"/>
             <TextBlock Text="Фамилия:" Height="19" Width="65" Margin="-270 10 0 0"/>
             <TextBox x:Name="FName" Height="20" Width="270" Margin="55 -20 0 0"/>
