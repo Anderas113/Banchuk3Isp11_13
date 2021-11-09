@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Banchuk3Isp11_13.Windows.Meneger"
         mc:Ignorable="d"
-        Title="EditWindowPatient" Height="450" Width="800">
+        Title="EditWindowPatient" Height="470" Width="350">
     <Grid>
-        
+        <StackPanel>
+            <TextBlock Text="Имя:" Height="19" Width="45" Margin="-290 3 0 0"/>
+            <TextBox x:Name="Name" Height="20" Width="270" Margin="55 -20 0 0"/>
+            <TextBlock Text="Высота:" Height="19" Width="65" Margin="-270 10 0 0"/>
+            <TextBox x:Name="height" Height="20" Width="270" Margin="55 -20 0 0"/>
+            <TextBlock Text="ширина:" Height="19" Width="65" Margin="-270 10 0 0"/>
+            <TextBox x:Name="weight" Height="20" Width="270" Margin="55 -20 0 0"/>
+            <TextBlock Text="длина:" Height="19" Width="65" Margin="-270 10 0 0"/>
+            <TextBox x:Name="Lenght" Height="20" Width="270" Margin="55 -20 0 0"/>
+            <TextBlock Text="Пол:" Height="19" Width="65" Margin="-270 10 0 0"/>
+            <ComboBox x:Name="Gender" Height="20" Width="270" Margin="55 -20 0 0"/>
+            <TextBlock Text="Вид:" Height="19" Width="65" Margin="-270 10 0 0"/>
+            <ComboBox x:Name="Kind" Height="20" Width="270" Margin="55 -20 0 0"/>
+            <TextBlock Text="Порода:" Height="19" Width="65" Margin="-270 10 0 0"/>
+            <ComboBox x:Name="Bread" Height="20" Width="270" Margin="55 -20 0 0"/>
+            <TextBlock Text="Почта Хозяина:" Height="19" Width="100" Margin="-240 10 0 0"/>
+            <TextBox x:Name="Masster" Height="20" Width="240" Margin="85 -20 0 0"/>
+            <TextBlock Text="Дата рождения:" Height="19" Width="95" Margin="-245 10 0 0"/>
+            <TextBox x:Name="Date" Text="{Binding ElementName=cldSample, Path=SelectedDate, StringFormat=d, UpdateSourceTrigger=PropertyChanged}"  Height="19" Width="190" Margin="55 -20 0 0" />
+            <Calendar x:Name="calendar1" FirstDayOfWeek="Monday" SelectedDatesChanged="calendar_SelectedDatesChanged"/>
+        </StackPanel>
+        <Button x:Name="Close" Content="Закрыть" Height="19" Width="65" Margin="-270 410 0 0" Click="ClickClose"/>
+        <Button x:Name="Add" Content="Сохранить" Height="19" Width="65" Margin="270 410 0 0" Click="ClickAdd" />
     </Grid>
 </Window>

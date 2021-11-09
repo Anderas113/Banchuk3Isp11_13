@@ -23,8 +23,8 @@
             <TextBlock Text="Дата рождения:" Height="19" Width="95" Margin="-245 10 0 0"/>
             <TextBox x:Name="Date" Text="{Binding ElementName=cldSample, Path=SelectedDate, StringFormat=d, UpdateSourceTrigger=PropertyChanged}"  Height="19" Width="190" Margin="55 -20 0 0" />
             <Calendar x:Name="calendar1" FirstDayOfWeek="Monday" SelectedDatesChanged="calendar_SelectedDatesChanged"/>
-            <Button x:Name="Close" Content="Закрыть" Height="19" Width="65" Margin="-270 10 0 0" Click="ClickClose"/>
-            <Button x:Name="Add" Content="Сохранить" Height="19" Width="65" Margin="270 -20 0 0" Click="ClickAdd"/>
         </StackPanel>
+        <Button x:Name="Close" Content="Закрыть" Height="19" Width="65" Margin="-270 390 0 0" Click="ClickClose"/>
+        <Button x:Name="Add" Content="Сохранить" Height="19" Width="65" Margin="270 390 0 0" Click="ClickAdd" />
     </Grid>
 </Window>

@@ -25,6 +25,7 @@ namespace Banchuk3Isp11_13.Windows.Meneger
         {
             InitializeComponent();
             Gender.ItemsSource = Context.Gender.Select(i => i.GenderName).ToList();
+            
         }
         private void ClickAdd(object sender, RoutedEventArgs e)
         {
