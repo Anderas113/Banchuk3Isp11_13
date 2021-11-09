@@ -52,13 +52,16 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
                 <Button x:Name="btnEditManager"
-                    Content="Редактировать услугу"
+                    Content="Редактировать пациента"
+                        Click="btnEditClientClick"
                     />
                 <Button x:Name="btnDelManager"
-                    Content="Удалить услугу"
+                    Content="Удалить пациента"
+                        Click="btnDelClient"
                     />
                 <Button x:Name="btnAddManager"
-                    Content="Добавить услугу"
+                    Content="Добавить пациента"
+                        Click="btnAddClientClick"
                    />
             </StackPanel>
             <ListView Grid.Row="1" x:Name="LvUserPatient" >

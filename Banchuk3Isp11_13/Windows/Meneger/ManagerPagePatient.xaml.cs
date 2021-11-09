@@ -32,8 +32,8 @@ namespace Banchuk3Isp11_13.Windows.Meneger
         }
         private void btnAddClientClick(object sender, RoutedEventArgs e)
         {
-            AddWindowClient addWindowClient = new AddWindowClient();
-            addWindowClient.ShowDialog();
+            AddWindowPatient addWindowPatient = new AddWindowPatient();
+            addWindowPatient.ShowDialog();
             LvUserPatient.ItemsSource = Context.Patient.ToList();
         }
         private void btnDelClient(object sender, RoutedEventArgs e)
@@ -57,8 +57,8 @@ namespace Banchuk3Isp11_13.Windows.Meneger
             if (LvUserPatient.SelectedItem is Patient patient)
             {
                 idClient = patient.IdPatient;
-                EditWindowClient editWindowClient = new EditWindowClient();
-                editWindowClient.ShowDialog();
+                EditWindowPatient editWindowPatient = new EditWindowPatient();
+                editWindowPatient.ShowDialog();
                 LvUserPatient.ItemsSource = Context.Patient.ToList();
             }
             else

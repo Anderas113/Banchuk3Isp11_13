@@ -8,67 +8,70 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ClientPage">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="230"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="70"/>
-        </Grid.RowDefinitions>
-        <WrapPanel Grid.Row="0"
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="230"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+            <WrapPanel Grid.Row="0"
                    Orientation="Horizontal"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    >
-            <Button x:Name="btnBackFrm"
+                <Button x:Name="btnBackFrm"
                     Content="&lt;"/>
-            <TextBox x:Name="txbSearch"
+                <TextBox x:Name="txbSearch"
                      />
 
 
-        </WrapPanel>
-        <StackPanel Grid.Row="2"       
+            </WrapPanel>
+            <StackPanel Grid.Row="2"       
                         Orientation="Horizontal"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center">
-            <Button x:Name="btnLastPage"
+                <Button x:Name="btnLastPage"
                     Content="&lt;"
                    
                  
                     />
-            <TextBlock x:Name="tbckPage"
+                <TextBlock x:Name="tbckPage"
                        Text="1"
                        FontSize="20"
                        />
-            <Button x:Name="btnNextPage"
+                <Button x:Name="btnNextPage"
                     Content=">"
                  
                   
                     />
-        </StackPanel>
-        <StackPanel Grid.Row="3"
+            </StackPanel>
+            <StackPanel Grid.Row="3"
                     Orientation="Horizontal"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-            <Button x:Name="btnEditManager"
-                    Content="Редактировать услугу"
+                <Button x:Name="btnEditManager"
+                    Content="Редактировать пациента"
+                        Click="btnEditClientClick"
                     />
-            <Button x:Name="btnDelManager"
-                    Content="Удалить услугу"
+                <Button x:Name="btnDelManager"
+                    Content="Удалить пациента"
+                        Click="btnDelClient"
                     />
-            <Button x:Name="btnAddManager"
-                    Content="Добавить услугу"
+                <Button x:Name="btnAddManager"
+                    Content="Добавить пациента"
+                        Click="btnAddClientClick"
                    />
-        </StackPanel>
-        <ListView Grid.Row="1" x:Name="LvUserPatient" >
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Имя" Width="100" DisplayMemberBinding="{Binding Name}"/>
-                    <GridViewColumn Header="Вид" Width="100" DisplayMemberBinding="{Binding KindName}"/>
-                    <GridViewColumn Header="Разноидность" Width="100" DisplayMemberBinding="{Binding NameBreed}"/>
-                    <GridViewColumn Header="Почта Хозина" Width="100" DisplayMemberBinding="{Binding Email}"/>
-                    <GridViewColumn Header="Дата рождения" Width="100" DisplayMemberBinding="{Binding DateOfBirth}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-    </Grid>
+            </StackPanel>
+            <ListView Grid.Row="1" x:Name="LvUserPatient" >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Имя" Width="100" DisplayMemberBinding="{Binding Name}"/>
+                        <GridViewColumn Header="Вид" Width="100" DisplayMemberBinding="{Binding KindName}"/>
+                        <GridViewColumn Header="Разноидность" Width="100" DisplayMemberBinding="{Binding NameBreed}"/>
+                        <GridViewColumn Header="Почта Хозина" Width="100" DisplayMemberBinding="{Binding Email}"/>
+                        <GridViewColumn Header="Дата рождения" Width="100" DisplayMemberBinding="{Binding DateOfBirth}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
 </Page>
