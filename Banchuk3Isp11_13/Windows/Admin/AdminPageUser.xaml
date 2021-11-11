@@ -52,15 +52,15 @@
                     VerticalAlignment="Center">
             <Button x:Name="btnEditManager"
                     Content="Редактировать Менеджера"
-                    Click="btnEditManager"
+                    Click="btnEditManagerClick"
                     />
             <Button x:Name="btnDelManager"
                     Content="Удалить Менеджера"
-                    Click="btnDelManager"
+                    Click="btnDelManagerClick"
                     />
                 <Button x:Name="btnAddManager"
                     Content="Добавить Менеджера"
-                        Click="btnAddManager"
+                        Click="btnAddManagerClick"
                    />
             </StackPanel>
         <ListView Grid.Row="1" x:Name="LvUserManager" >

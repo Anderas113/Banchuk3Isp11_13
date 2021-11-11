@@ -26,7 +26,7 @@
             <TextBox x:Name="Masster" Height="20" Width="240" Margin="85 -20 0 0"/>
             <TextBlock Text="Дата рождения:" Height="19" Width="95" Margin="-245 10 0 0"/>
             <TextBox x:Name="Date" Text="{Binding ElementName=cldSample, Path=SelectedDate, StringFormat=d, UpdateSourceTrigger=PropertyChanged}"  Height="19" Width="190" Margin="55 -20 0 0" />
-            <Calendar x:Name="calendar1" FirstDayOfWeek="Monday" SelectedDatesChanged="calendar_SelectedDatesChanged"/>
+            <Calendar x:Name="calendar1" FirstDayOfWeek="Monday" />
         </StackPanel>
         <Button x:Name="Close" Content="Закрыть" Height="19" Width="65" Margin="-270 410 0 0" Click="ClickClose"/>
         <Button x:Name="Add" Content="Сохранить" Height="19" Width="65" Margin="270 410 0 0" Click="ClickAdd" />

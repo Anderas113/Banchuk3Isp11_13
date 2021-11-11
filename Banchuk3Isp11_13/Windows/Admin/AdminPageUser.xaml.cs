@@ -27,13 +27,13 @@ namespace Banchuk3Isp11_13.Windows.Admin
             InitializeComponent();
             LvUserManager.ItemsSource = Context.Administrator.ToList();
         }
-        private void btnAddManager(object sender, RoutedEventArgs e)
+        private void btnAddManagerClick(object sender, RoutedEventArgs e)
         {
             AddWindowManager addWindowClient = new AddWindowManager();
             addWindowClient.ShowDialog();
             LvUserManager.ItemsSource = Context.Administrator.ToList();
         }
-        private void btnDelManager(object sender, RoutedEventArgs e)
+        private void btnDelManagerClick(object sender, RoutedEventArgs e)
         {
             var result = MessageBox.Show("Вы хотите удалить клиента?", "Удаление клиента.", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
@@ -49,11 +49,11 @@ namespace Banchuk3Isp11_13.Windows.Admin
                 { MessageBox.Show("Пожалуста выберити клиента.", "Удаление клиента.", MessageBoxButton.OK, MessageBoxImage.Information); }
             }
         }
-        private void btnEditManager(object sender, RoutedEventArgs e)
+        private void btnEditManagerClick(object sender, RoutedEventArgs e)
         {
-            if (LvUserManager.SelectedItem is Client client)
+            if (LvUserManager.SelectedItem is Administrator administrator)
             {
-                idClient = client.IdClient;
+                idClient = administrator.IdAdmin;
                 EditWindowManager editWindowManager = new EditWindowManager();
                 editWindowManager.ShowDialog();
                 LvUserManager.ItemsSource = Context.Administrator.ToList();

@@ -29,13 +29,13 @@ namespace Banchuk3Isp11_13.Windows.Admin
             LvUserVeterenar.ItemsSource = Context.Specality.ToList();
 
         }
-        private void btnAddManager(object sender, RoutedEventArgs e)
+        private void btnAddDoctorClick(object sender, RoutedEventArgs e)
         {
             AddWindowDoctor addWindowDoctor = new AddWindowDoctor();
             addWindowDoctor.ShowDialog();
             LvUserVeterenar.ItemsSource = Context.Doctor.ToList();
         }
-        private void btnDelManager(object sender, RoutedEventArgs e)
+        private void btnDelDoctorClick(object sender, RoutedEventArgs e)
         {
             var result = MessageBox.Show("Вы хотите удалить клиента?", "Удаление клиента.", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
@@ -51,7 +51,7 @@ namespace Banchuk3Isp11_13.Windows.Admin
                 { MessageBox.Show("Пожалуста выберити клиента.", "Удаление клиента.", MessageBoxButton.OK, MessageBoxImage.Information); }
             }
         }
-        private void btnEditManager(object sender, RoutedEventArgs e)
+        private void btnEditDoctorClick(object sender, RoutedEventArgs e)
         {
             if (LvUserVeterenar.SelectedItem is Doctor doctor)
             {

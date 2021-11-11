@@ -33,8 +33,8 @@ namespace Banchuk3Isp11_13.Windows.Veterinar
         }
         private void btnAddClientClick(object sender, RoutedEventArgs e)
         {
-            AddWindowPatient addWindowPatient = new AddWindowPatient();
-            addWindowPatient.ShowDialog();
+          
+        
             LvUserPatient.ItemsSource = Context.Patient.ToList();
         }
         private void btnDelClient(object sender, RoutedEventArgs e)
@@ -58,8 +58,8 @@ namespace Banchuk3Isp11_13.Windows.Veterinar
             if (LvUserPatient.SelectedItem is Patient patient)
             {
                 idClient = patient.IdPatient;
-                EditWindowPatient editWindowPatient = new EditWindowPatient();
-                editWindowPatient.ShowDialog();
+           
+       
                 LvUserPatient.ItemsSource = Context.Patient.ToList();
             }
             else
