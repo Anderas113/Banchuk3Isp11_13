@@ -122,8 +122,20 @@
     <Compile Include="EF\Specality.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Admin\AddWindowDoctor.xaml.cs">
+      <DependentUpon>AddWindowDoctor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Admin\AddWindowManager.xaml.cs">
+      <DependentUpon>AddWindowManager.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Admin\AdminPageUser.xaml.cs">
       <DependentUpon>AdminPageUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Admin\EditWindowDoctor.xaml.cs">
+      <DependentUpon>EditWindowDoctor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Admin\EditWindowManager.xaml.cs">
+      <DependentUpon>EditWindowManager.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Admin\PageAdminVetirinar.xaml.cs">
       <DependentUpon>PageAdminVetirinar.xaml</DependentUpon>
@@ -167,11 +179,27 @@
     <Compile Include="Windows\Veterinar\VeterinarWindow.xaml.cs">
       <DependentUpon>VeterinarWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Windows\Admin\AddWindowDoctor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Admin\AddWindowManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\Admin\AdminPageUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\Admin\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Admin\EditWindowDoctor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Admin\EditWindowManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

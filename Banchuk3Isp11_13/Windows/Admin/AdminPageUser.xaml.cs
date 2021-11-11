@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Banchuk3Isp11_13.EF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,42 @@ namespace Banchuk3Isp11_13.Windows.Admin
         {
             InitializeComponent();
             LvUserManager.ItemsSource = Context.Administrator.ToList();
+        }
+        private void btnAddManager(object sender, RoutedEventArgs e)
+        {
+            AddWindowManager addWindowClient = new AddWindowManager();
+            addWindowClient.ShowDialog();
+            LvUserManager.ItemsSource = Context.Administrator.ToList();
+        }
+        private void btnDelManager(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Вы хотите удалить клиента?", "Удаление клиента.", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                if (LvUserManager.SelectedItem is Administrator administrator)
+                {
+                    Context.Administrator.Remove(Context.Administrator.Where(i => i.IdAdmin == administrator.IdAdmin).FirstOrDefault());
+                    Context.SaveChanges();
+                    MessageBox.Show("Запись удалена.", "Удаление записи.", MessageBoxButton.OK, MessageBoxImage.Information);
+                    LvUserManager.ItemsSource = Context.Administrator.ToList();
+                }
+                else
+                { MessageBox.Show("Пожалуста выберити клиента.", "Удаление клиента.", MessageBoxButton.OK, MessageBoxImage.Information); }
+            }
+        }
+        private void btnEditManager(object sender, RoutedEventArgs e)
+        {
+            if (LvUserManager.SelectedItem is Client client)
+            {
+                idClient = client.IdClient;
+                EditWindowManager editWindowManager = new EditWindowManager();
+                editWindowManager.ShowDialog();
+                LvUserManager.ItemsSource = Context.Administrator.ToList();
+            }
+            else
+            {
+                MessageBox.Show("Вы не выбрали клиента из списка.", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
     }
 }
