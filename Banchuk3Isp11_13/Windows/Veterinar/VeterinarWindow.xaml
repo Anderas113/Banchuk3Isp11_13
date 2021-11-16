@@ -17,12 +17,12 @@
                     Background="Khaki"
                     VerticalAlignment="Center">
             <Button x:Name="btnListService"
-                    Content="Список услуг"
+                    Content="Список Расписание Кабинетов"
                    Background="Khaki"
                     Click="BtnClickPathient"
                     />
             <Button x:Name="btnListProduct"
-                    Content="Список пациентов"
+                    Content="Список Заказов"
                    Background="Khaki"
                       Click="BtnClickService"
                     />
