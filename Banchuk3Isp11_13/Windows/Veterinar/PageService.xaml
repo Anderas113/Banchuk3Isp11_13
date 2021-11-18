@@ -50,23 +50,15 @@
                     Orientation="Horizontal"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-            <Button x:Name="btnEditServise"
-                    Content="Редактировать услугу"
-                    />
-            <Button x:Name="btnDelServise"
-                    Content="Удалить услугу"
-                    />
-            <Button x:Name="btnAddServise"
-                    Content="Добавить услугу"
-                   />
         </StackPanel>
         <ListView Grid.Row="1" x:Name="LvServiceDoctor">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Название Услиги" Width="100" DisplayMemberBinding="{Binding NameService}"/>
-                    <GridViewColumn Header="Длительность" Width="100" DisplayMemberBinding="{Binding LengTimeService}"/>
-                    <GridViewColumn Header="Описание услуги" Width="100" DisplayMemberBinding="{Binding DescriptionService}"/>
-                    <GridViewColumn Header="Цена услуги" Width="100" DisplayMemberBinding="{Binding Cost}"/>
+                    <GridViewColumn Header="Кабинет" Width="100" DisplayMemberBinding="{Binding NameService}"/>
+                    <GridViewColumn Header="Врач" Width="100" DisplayMemberBinding="{Binding LengTimeService}"/>
+                    <GridViewColumn Header="Дни недели" Width="100" DisplayMemberBinding="{Binding DescriptionService}"/>
+                    <GridViewColumn Header="Время начала" Width="100" DisplayMemberBinding="{Binding Cost}"/>
+                    <GridViewColumn Header="Время конца" Width="100" DisplayMemberBinding="{Binding Cost}"/>
                 </GridView>
             </ListView.View>
         </ListView>

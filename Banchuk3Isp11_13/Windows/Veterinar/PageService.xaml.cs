@@ -24,7 +24,9 @@ namespace Banchuk3Isp11_13.Windows.Veterinar
         public PageService()
         {
             InitializeComponent();
-            LvServiceDoctor.ItemsSource = Context.Service.ToList();
+            LvServiceDoctor.ItemsSource = Context.Schedule.ToList();
+            LvServiceDoctor.ItemsSource = Context.Doctor.ToList();
+            LvServiceDoctor.ItemsSource = Context.Cabinet.ToList();
         }
     }
 }

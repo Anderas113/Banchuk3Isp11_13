@@ -10,5 +10,6 @@ namespace Banchuk3Isp11_13.EF
     {
         public static VeterenarEntities Context = new VeterenarEntities();
         public static int idClient;
+        public static int IdUser;
     }
 }
