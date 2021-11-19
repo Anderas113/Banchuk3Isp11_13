@@ -26,7 +26,7 @@ namespace Banchuk3Isp11_13.Windows.Admin
         {
             InitializeComponent();
             LvUserVeterenar.ItemsSource = Context.Doctor.ToList();
-            LvUserVeterenar.ItemsSource = Context.Specality.ToList();
+        
 
         }
         private void btnAddDoctorClick(object sender, RoutedEventArgs e)

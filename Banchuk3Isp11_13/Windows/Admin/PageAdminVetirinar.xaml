@@ -69,11 +69,11 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Фамилия" Width="100" DisplayMemberBinding="{Binding LastName}"/>
-                    <GridViewColumn Header="Имя" Width="100" DisplayMemberBinding="{Binding AdminNane}"/>
+                    <GridViewColumn Header="Имя" Width="100" DisplayMemberBinding="{Binding DoctorNane}"/>
                     <GridViewColumn Header="Отчество" Width="100" DisplayMemberBinding="{Binding Patronomyc}"/>
                     <GridViewColumn Header="Email" Width="100" DisplayMemberBinding="{Binding Email}"/>
                     <GridViewColumn Header="Телефон" Width="100" DisplayMemberBinding="{Binding Phone}"/>
-                    <GridViewColumn Header="Спецальность" Width="150" DisplayMemberBinding="{Binding NameSpecality}"/>
+                    <GridViewColumn Header="Спецальность" Width="150" DisplayMemberBinding="{Binding Specality.NameSpecality}"/>
                 </GridView>
             </ListView.View>
         </ListView>
