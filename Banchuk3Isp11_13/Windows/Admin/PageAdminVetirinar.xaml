@@ -51,17 +51,17 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
             <Button x:Name="btnEditManager"
-                    Content="Редактировать услугу"
+                    Content="Редактировать ветеринара"
                     Click="btnEditDoctorClick"
                     
                     />
             <Button x:Name="btnDelManager"
-                    Content="Удалить услугу"
+                    Content="Удалить ветеринара"
                     Click="btnDelDoctorClick"
                     
                     />
             <Button x:Name="btnAddManager"
-                    Content="Добавить услугу"
+                    Content="Добавить ветеринара"
                     Click="btnAddDoctorClick"
                    />
         </StackPanel>
