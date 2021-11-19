@@ -54,11 +54,11 @@
         <ListView Grid.Row="1" x:Name="LvServiceDoctor">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Кабинет" Width="100" DisplayMemberBinding="{Binding NameService}"/>
-                    <GridViewColumn Header="Врач" Width="100" DisplayMemberBinding="{Binding LengTimeService}"/>
-                    <GridViewColumn Header="Дни недели" Width="100" DisplayMemberBinding="{Binding DescriptionService}"/>
-                    <GridViewColumn Header="Время начала" Width="100" DisplayMemberBinding="{Binding Cost}"/>
-                    <GridViewColumn Header="Время конца" Width="100" DisplayMemberBinding="{Binding Cost}"/>
+                    <GridViewColumn Header="Кабинет" Width="100" DisplayMemberBinding="{Binding Cabinet.NameCabinet}"/>
+                    <GridViewColumn Header="Врач" Width="100" DisplayMemberBinding="{Binding Doctor.DoctorNane}"/>
+                    <GridViewColumn Header="Дни недели" Width="100" DisplayMemberBinding="{Binding NumberOfWeek}"/>
+                    <GridViewColumn Header="Время начала" Width="100" DisplayMemberBinding="{Binding TimeScheduleBegin}"/>
+                    <GridViewColumn Header="Время конца" Width="100" DisplayMemberBinding="{Binding TimeScheduleEnd}"/>
                 </GridView>
             </ListView.View>
         </ListView>
