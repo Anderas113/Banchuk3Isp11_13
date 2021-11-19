@@ -26,9 +26,7 @@ namespace Banchuk3Isp11_13.Windows.Meneger
         {
             InitializeComponent();
             LvUserPatient.ItemsSource = Context.Patient.ToList();
-            LvUserPatient.ItemsSource = Context.KindOfAnimal.ToList();
-            LvUserPatient.ItemsSource = Context.Breed.ToList();
-            LvUserPatient.ItemsSource = Context.Client.ToList();
+
         }
         private void btnAddClientClick(object sender, RoutedEventArgs e)
         {

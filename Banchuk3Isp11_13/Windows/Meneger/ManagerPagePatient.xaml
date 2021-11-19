@@ -68,9 +68,9 @@
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Имя" Width="100" DisplayMemberBinding="{Binding Name}"/>
-                        <GridViewColumn Header="Вид" Width="100" DisplayMemberBinding="{Binding KindName}"/>
-                        <GridViewColumn Header="Разноидность" Width="100" DisplayMemberBinding="{Binding NameBreed}"/>
-                        <GridViewColumn Header="Почта Хозина" Width="100" DisplayMemberBinding="{Binding Email}"/>
+                        <GridViewColumn Header="Вид" Width="100" DisplayMemberBinding="{Binding KindOfAnimal.KindName}"/>
+                        <GridViewColumn Header="Разноидность" Width="100" DisplayMemberBinding="{Binding Breed.NameBreed}"/>
+                        <GridViewColumn Header="Почта Хозина" Width="100" DisplayMemberBinding="{Binding Client.Email}"/>
                         <GridViewColumn Header="Дата рождения" Width="100" DisplayMemberBinding="{Binding DateOfBirth}"/>
                     </GridView>
                 </ListView.View>

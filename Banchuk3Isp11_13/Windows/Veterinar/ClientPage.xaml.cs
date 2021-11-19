@@ -25,10 +25,9 @@ namespace Banchuk3Isp11_13.Windows.Veterinar
         public ClientPage()
         {
             InitializeComponent();
-            LvUserPatient.ItemsSource = Context.Doctor.ToList();
+
             LvUserPatient.ItemsSource = Context.Order.ToList();
-            LvUserPatient.ItemsSource = Context.Service.ToList();
-            LvUserPatient.ItemsSource = Context.Patient.ToList();
+
 
         }
 

@@ -67,9 +67,9 @@
                     <GridView>
                         <GridViewColumn Header="Начало Операции" Width="120" DisplayMemberBinding="{Binding TimeBeginOrder}"/>
                         <GridViewColumn Header="Конец Операции" Width="100" DisplayMemberBinding="{Binding TimeEndOrder}"/>
-                        <GridViewColumn Header="Услуга" Width="100" DisplayMemberBinding="{Binding NameService}"/>
-                        <GridViewColumn Header="Пациент" Width="100" DisplayMemberBinding="{Binding Name}"/>
-                        <GridViewColumn Header="Доктор" Width="100" DisplayMemberBinding="{Binding DoctorNane}"/>
+                        <GridViewColumn Header="Услуга" Width="100" DisplayMemberBinding="{Binding Service.NameService}"/>
+                        <GridViewColumn Header="Пациент" Width="100" DisplayMemberBinding="{Binding Patient.Name}"/>
+                        <GridViewColumn Header="Доктор" Width="100" DisplayMemberBinding="{Binding Doctor.DoctorNane}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
