@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Banchuk3Isp11_13.EF.Entfr;
 
 namespace Banchuk3Isp11_13
 {
@@ -50,6 +51,7 @@ namespace Banchuk3Isp11_13
                         DataTable dt_user = Select("SELECT * FROM [dbo].[Doctor] WHERE [Email] = '" + Login.Text + "' AND [Phone] = '" + password.Password + "'");
                         if (dt_user.Rows.Count > 0) // если такая запись существует       
                         {
+                            IdUser= Convert.ToInt32(Select("SELECT IdDoctor FROM [dbo].[Doctor] WHERE [Email] = '" + Login.Text + "' AND [Phone] = '" + password.Password + "'"));
                             Banchuk3Isp11_13.Windows.VeterinarWindow aM = new Banchuk3Isp11_13.Windows.VeterinarWindow();
                             aM.Show();
                             Application.Current.MainWindow.Close();
@@ -68,7 +70,8 @@ namespace Banchuk3Isp11_13
                     {             // ищем в базе данных пользователя с такими данными         
                         DataTable dt_user = Select("SELECT * FROM [dbo].[Administrator] WHERE [Email] = '" + Login.Text + "' AND [Phone] = '" + password.Password + "'");
                         if (dt_user.Rows.Count > 0) // если такая запись существует       
-                        {
+                        {   
+
                             Banchuk3Isp11_13.Windows.MenegerWindow aM = new Banchuk3Isp11_13.Windows.MenegerWindow();
                             aM.Show();
                             Application.Current.MainWindow.Close();

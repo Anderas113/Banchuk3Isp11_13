@@ -170,8 +170,17 @@
     <Compile Include="Windows\Meneger\PageMaster.xaml.cs">
       <DependentUpon>PageMaster.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Veterinar\AddWindowOrder.xaml.cs">
+      <DependentUpon>AddWindowOrder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Veterinar\ClientPage.xaml.cs">
       <DependentUpon>ClientPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Veterinar\EditWindowOrder.xaml.cs">
+      <DependentUpon>EditWindowOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Veterinar\PageMedCart.xaml.cs">
+      <DependentUpon>PageMedCart.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Veterinar\PageService.xaml.cs">
       <DependentUpon>PageService.xaml</DependentUpon>
@@ -262,7 +271,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\Veterinar\AddWindowOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\Veterinar\ClientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Veterinar\EditWindowOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Veterinar\PageMedCart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
