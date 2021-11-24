@@ -27,6 +27,7 @@ namespace Banchuk3Isp11_13
         public AuthWindow()
         {
             InitializeComponent();
+           
         }
         public DataTable Select(string SelectSql)
         {
